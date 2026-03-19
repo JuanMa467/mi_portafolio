@@ -1,11 +1,53 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Badge from '../components/Badge.astro';
+import Github from '../components/icons/github.astro';
+import Linkedin from '../components/icons/linkedin.astro';
+import Instagram from '../components/icons/instagram.astro';
+import SocialPill from '../components/SocialPill.astro';
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Welcome to Astro.">
+	<section class="w-full 	lg:w-[740px] mx-auto py-44">
+	<main>
+	<h1 class="text-white text-4xl font-bold flex  flex-row gap-x-4 pb-5">
+		Hey, Soy Juan Manuel Atencio 
+		<a 
+			href="https://www.linkedin.com/in/juan-manuel-atencio-81bb3a260/"
+			target="_blank" 
+			rel="noopener"
+			class="flex justify-center items-center"
+		>
+			<Badge >Disponible para trabajar</Badge>
+		</a>
+	</h1>
+	<h2 class="text-2xl opacity-80">
+		Estudiante 2do año de la carrera de Desarrollo de Software del Instituto Tecnológico Universitario.
+		Mendoza, Argentina. Apasionado por la tecnología y el aprendizaje continuo. 
+		Busco oportunidades para aplicar mis habilidades y crecer profesionalmente en el campo del desarrollo de software.
+	</h2>
+	<ul class="text-white text-1xl justify-center items-center flex gap-x-2 py-4">
+		<li >
+
+			<SocialPill href="https://github.com/JuanMa467" target="_blank" rel="noopener noreferrer">
+			<Github class="w-6 h-6" />
+				Github
+			</SocialPill>
+		</li>
+		<li>
+			<SocialPill href="https://www.linkedin.com/in/juan-manuel-atencio-81bb3a260/" target="_blank" rel="noopener noreferrer">
+				<Linkedin class="w-6 h-6" />
+				Linkedin
+			</SocialPill>
+		</li>
+		<li>
+			<SocialPill href="https://www.instagram.com/atencio_juanma/" target="_blank" rel="noopener noreferrer">
+				<Instagram class="w-6 h-6" />
+				Instagram
+			</SocialPill>
+		</li>
+	</ul>
+	
+	</main>
+	</section>
 </Layout>
