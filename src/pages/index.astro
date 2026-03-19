@@ -5,9 +5,13 @@ import Github from '../components/icons/github.astro';
 import Linkedin from '../components/icons/linkedin.astro';
 import Instagram from '../components/icons/instagram.astro';
 import SocialPill from '../components/SocialPill.astro';
+import Mail from '../components/icons/mail.astro';
 ---
 
-<Layout title="Welcome to Astro.">
+<Layout 
+	title="Portafolio Juan Manuel Atencio - Desarrollador y programador web"
+	description="Contrata a Juan Manuel Atencio para desarrollar tus proyectos web"
+>
 	<section class="w-full 	lg:w-[740px] mx-auto py-44">
 	<main>
 	<h1 class="text-white text-4xl font-bold flex  flex-row gap-x-4 pb-5">
@@ -21,7 +25,7 @@ import SocialPill from '../components/SocialPill.astro';
 			<Badge >Disponible para trabajar</Badge>
 		</a>
 	</h1>
-	<h2 class="text-2xl opacity-80">
+	<h2 class="text-2xl opacity-80 text-white ">
 		Estudiante 2do año de la carrera de Desarrollo de Software del Instituto Tecnológico Universitario.
 		Mendoza, Argentina. Apasionado por la tecnología y el aprendizaje continuo. 
 		Busco oportunidades para aplicar mis habilidades y crecer profesionalmente en el campo del desarrollo de software.
@@ -44,6 +48,12 @@ import SocialPill from '../components/SocialPill.astro';
 			<SocialPill href="https://www.instagram.com/atencio_juanma/" target="_blank" rel="noopener noreferrer">
 				<Instagram class="w-6 h-6" />
 				Instagram
+			</SocialPill>
+		</li>
+		<li>
+			<SocialPill href="" target="_blank" rel="noopener noreferrer">
+				<Mail class="w-6 h-6" />
+				atenciojuanmanuel05@gmail.com
 			</SocialPill>
 		</li>
 	</ul>
