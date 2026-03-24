@@ -1,63 +1,87 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Badge from '../components/Badge.astro';
-import Github from '../components/icons/github.astro';
-import Linkedin from '../components/icons/linkedin.astro';
-import Instagram from '../components/icons/instagram.astro';
-import SocialPill from '../components/SocialPill.astro';
-import Mail from '../components/icons/mail.astro';
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import Github from "../components/icons/github.astro";
+import Linkedin from "../components/icons/linkedin.astro";
+import SocialPill from "../components/SocialPill.astro";
+import Mail from "../components/icons/mail.astro";
+import Proyects from "../components/Proyects.astro";
+import Exp from "../components/Experecias.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import BriefCase from "../components/icons/BriefCase.astro";
 ---
 
-<Layout 
+<Layout
 	title="Portafolio Juan Manuel Atencio - Desarrollador y programador web"
 	description="Contrata a Juan Manuel Atencio para desarrollar tus proyectos web"
 >
-	<section class="w-full 	lg:w-[740px] mx-auto py-44">
-	<main>
-	<h1 class="text-white text-4xl font-bold flex  flex-row gap-x-4 pb-5">
-		Hey, Soy Juan Manuel Atencio 
-		<a 
-			href="https://www.linkedin.com/in/juan-manuel-atencio-81bb3a260/"
-			target="_blank" 
-			rel="noopener"
-			class="flex justify-center items-center"
-		>
-			<Badge >Disponible para trabajar</Badge>
-		</a>
-	</h1>
-	<h2 class="text-2xl opacity-80 text-white ">
-		Estudiante 2do año de la carrera de Desarrollo de Software del Instituto Tecnológico Universitario.
-		Mendoza, Argentina. Apasionado por la tecnología y el aprendizaje continuo. 
-		Busco oportunidades para aplicar mis habilidades y crecer profesionalmente en el campo del desarrollo de software.
-	</h2>
-	<ul class="text-white text-1xl justify-center items-center flex gap-x-2 py-4">
-		<li >
-
-			<SocialPill href="https://github.com/JuanMa467" target="_blank" rel="noopener noreferrer">
-			<Github class="w-6 h-6" />
-				Github
-			</SocialPill>
-		</li>
-		<li>
-			<SocialPill href="https://www.linkedin.com/in/juan-manuel-atencio-81bb3a260/" target="_blank" rel="noopener noreferrer">
-				<Linkedin class="w-6 h-6" />
-				Linkedin
-			</SocialPill>
-		</li>
-		<li>
-			<SocialPill href="https://www.instagram.com/atencio_juanma/" target="_blank" rel="noopener noreferrer">
-				<Instagram class="w-6 h-6" />
-				Instagram
-			</SocialPill>
-		</li>
-		<li>
-			<SocialPill href="" target="_blank" rel="noopener noreferrer">
-				<Mail class="w-6 h-6" />
-				atenciojuanmanuel05@gmail.com
-			</SocialPill>
-		</li>
-	</ul>
-	
-	</main>
-	</section>
+	<SectionContainer className="py-44 pb-24">
+		<main>
+			<h1
+				class="text-white text-4xl font-bold flex flex-row gap-x-4 pb-5"
+			>
+				Hey, Soy Juan Manuel Atencio
+				<a
+					href="https://www.linkedin.com/in/juan-manuel-atencio-81bb3a260/"
+					target="_blank"
+					rel="noopener"
+					class="flex justify-center items-center"
+				>
+					<Badge>Disponible para trabajar</Badge>
+				</a>
+			</h1>
+			<h2 class="text-2xl opacity-80 text-white">
+				Estudiante 2do año de la carrera de Desarrollo de Software del
+				Instituto Tecnológico Universitario. Mendoza, Argentina.
+				Apasionado por la tecnología y el aprendizaje continuo. Busco
+				oportunidades para aplicar mis habilidades y crecer
+				profesionalmente en el campo del desarrollo de software.
+			</h2>
+			<ul
+				class="text-white text-1xl items-center flex flex-wrap gap-x-4 gap-y-4 py-4"
+			>
+				<li>
+					<SocialPill
+						href="https://github.com/JuanMa467"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<Github class="size-6" />
+						Github
+					</SocialPill>
+				</li>
+				<li class="ml-3">
+					<SocialPill
+						href="https://www.linkedin.com/in/juan-manuel-atencio-81bb3a260/"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<Linkedin class="size-6" />
+						Linkedin
+					</SocialPill>
+				</li>
+				<li class="ml-3">
+					<SocialPill
+						href="https://mail.google.com/mail/?view=cm&fs=1&to=atenciojuanmanuel05@gmail.com"
+						target="_blank"
+						rel="noopener noreferrer"
+					>
+						<Mail class="size-6" />
+						atenciojuanmanuel05@gmail.com
+					</SocialPill>
+				</li>
+			</ul>
+		</main>
+	</SectionContainer>
+	<SectionContainer id="experiencia">
+		<h2 class="text-2xl font-semibold mb-6 flex gap-x-2 items-center">
+			<BriefCase class="size-7" />
+			Experiencia
+		</h2>
+		<Exp />
+	</SectionContainer>
+	<SectionContainer id="proyectos">
+		<h2 class="text-2xl font-semibold mb-6">Proyectos</h2>
+		<Proyects />
+	</SectionContainer>
 </Layout>

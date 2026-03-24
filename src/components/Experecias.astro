@@ -1,0 +1,26 @@
+---
+import EsperienciaItem from "./EsperienciaItem.astro";
+
+const EXPERIENCIAS = [
+    {
+        data: "Febrero 2026 - Actualidad",
+        title: "Paguina Web para la empresa 'ES Piel Calma'",
+        description:
+            "Creación de una página web para la empresa ES Piel Calma, con el objetivo de mostrar sus productos y servicios.",
+        link: "https://espielcalma.com/",
+        image: "/images/esPielcalma.jpeg",
+    },
+];
+---
+
+<ol class="relative border-s border-default">
+    {
+        EXPERIENCIAS.map((experiencia) => {
+            return (
+                <li class="mb-10 ms-4">
+                    <EsperienciaItem {...experiencia} />
+                </li>
+            );
+        })
+    }
+</ol>
