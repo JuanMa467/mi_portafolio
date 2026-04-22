@@ -1,0 +1,163 @@
+<!-- HERO -->
+<section id="hero">
+    <h1 class="hero-title">
+        <div class="overflow-hidden">
+            <span class="title-line block">Juan Manuel</span>
+        </div>
+        <div class="overflow-hidden">
+            <span class="title-line block"
+                ><em class="serif-word">Atencio</em></span
+            >
+        </div>
+    </h1>
+</section>
+<style>
+    :root {
+        --ivory: #f5f0e8;
+        --cream: #ede7d9;
+        --paper: #faf7f2;
+        --charcoal: #1a1814;
+        --ink: #2d2a26;
+        --muted: #6b6560;
+        --accent: #0047ff;
+        --accent-light: #e8eeff;
+        --accent-warm: #ff4d00;
+        --line: rgba(26, 24, 20, 0.12);
+        --font-display: "Syne", sans-serif;
+        --font-serif: "Fraunces", serif;
+        --font-mono: "DM Mono", monospace;
+    }
+    /* ── HERO ────── */
+    #hero {
+        padding: 0 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding-bottom: 6rem;
+        position: relative;
+    }
+
+    .hero-title {
+        font-family: var(--font-display);
+        font-size: clamp(52px, 9vw, 140px);
+        font-weight: 800;
+        line-height: 0.92;
+        letter-spacing: -0.03em;
+        color: var(--paper);
+        position: relative;
+        z-index: 1;
+    }
+    .hero-title .serif-word {
+        font-family: var(--font-serif);
+        font-weight: 300;
+        font-style: italic;
+        color: var(--accent);
+    }
+    .hero-title .outline-text {
+        -webkit-text-stroke: 2px var(--paper);
+        color: transparent;
+    }
+    .hero-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        margin-top: 3rem;
+        position: relative;
+        z-index: 1;
+    }
+    .hero-desc {
+        font-family: var(--font-mono);
+        font-size: 13px;
+        line-height: 1.8;
+        color: var(--muted);
+        max-width: 320px;
+    }
+    .hero-scroll {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        font-family: var(--font-mono);
+        font-size: 10px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--muted);
+    }
+    .hero-scroll-line {
+        width: 1px;
+        height: 60px;
+        background: linear-gradient(to bottom, var(--accent), transparent);
+        animation: scrollLine 2s ease-in-out infinite;
+    }
+    @keyframes scrollLine {
+        0%,
+        100% {
+            transform: scaleY(1);
+            opacity: 1;
+        }
+        50% {
+            transform: scaleY(0.5);
+            opacity: 0.4;
+        }
+    }
+    .hero-availability {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-family: var(--font-mono);
+        font-size: 11px;
+        letter-spacing: 0.05em;
+        color: var(--charcoal);
+        padding: 8px 16px;
+        border: 1px solid var(--line);
+        background: var(--ivory);
+    }
+    .hero-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #22c55e;
+        animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+        0%,
+        100% {
+            box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4);
+        }
+        50% {
+            box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+        }
+    }
+    .hero-number {
+        position: absolute;
+        right: 3rem;
+        top: 50%;
+        transform: translateY(-50%);
+        font-family: var(--font-serif);
+        font-size: clamp(120px, 20vw, 280px);
+        font-weight: 100;
+        color: transparent;
+        -webkit-text-stroke: 1px rgba(0, 71, 255, 0.08);
+        user-select: none;
+        pointer-events: none;
+        line-height: 1;
+        letter-spacing: -0.05em;
+    }
+    @media (max-width: 768px) {
+        #hero {
+            padding: 0 1.5rem;
+            padding-bottom: 4rem;
+        }
+        .hero-number {
+            display: none;
+        }
+        .hero-bottom {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 2rem;
+        }
+        .hero-scroll {
+            display: none;
+        }
+    }
+</style>

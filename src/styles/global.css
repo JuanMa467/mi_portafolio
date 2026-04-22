@@ -1,1 +1,44 @@
 @import "tailwindcss";
+
+/* ── SCROLL REVEAL ─────────────────────────── */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+
+:root {
+    color-scheme: light dark;
+    color-graylight: lightslategray;
+    --ivory: #f5f0e8;
+    --cream: #ede7d9;
+    --paper: #faf7f2;
+    --charcoal: #1a1814;
+    --ink: #2d2a26;
+    --muted: #6b6560;
+    --accent: #0047ff;
+    --accent-light: #e8eeff;
+    --accent-warm: #ff4d00;
+    --line: rgba(26, 24, 20, 0.12);
+    --font-display: "Syne", sans-serif;
+    --font-serif: "Fraunces", serif;
+    --font-mono: "DM Mono", monospace;
+}
+
+html {
+    font-family: "Onest Variable", system-ui, sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #000;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+}
