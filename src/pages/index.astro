@@ -12,13 +12,14 @@ import BriefCase from "../components/icons/BriefCase.astro";
 import Code from "../components/icons/code.astro";
 import Skills from "../components/skills.astro";
 import Loader from "../components/Loader.astro";
+import LineaAbajo from "../components/LineAbajo.astro";
 ---
 
 <Layout
 	title="Portafolio Juan Manuel Atencio - Desarrollador y programador web"
 	description="Contrata a Juan Manuel Atencio para desarrollar tus proyectos web"
 >
-	<SectionContainer className="pb-24">
+	<SectionContainer className="pb-24 reveal">
 		<main class="">
 			<Loader />
 			<h2 class="text-1xl md:text-xl lg:text-xl opacity-80 text-white">
@@ -70,7 +71,7 @@ import Loader from "../components/Loader.astro";
 			</ul>
 		</main>
 	</SectionContainer>
-	<SectionContainer id="experiencia" className="px-4">
+	<SectionContainer id="experiencia" className="px-4 reveal">
 		<h2
 			class="text-2xl font-semibold mb-6 flex gap-x-2 items-center text-white"
 		>
@@ -78,17 +79,12 @@ import Loader from "../components/Loader.astro";
 			<div class="ml-2">
 				<h2 class="text-3xl md:text-4xl font-bold text-white">
 					Mis <span style="color: var(--accent)">Experiencias</span>
-				</h2>
-				<div
-					class="w-24 h-1 mx-auto rounded-full"
-					style="background-color: var(--accent)"
-				>
-				</div>
+				</h2><LineaAbajo />
 			</div>
 		</h2>
 		<Exp />
 	</SectionContainer>
-	<SectionContainer id="proyectos" className="px-4">
+	<SectionContainer id="proyectos" className="px-4 reveal">
 		<h2
 			class="text-2xl font-semibold mb-6 text-white flex gap-x-2 items-center"
 		>
@@ -97,16 +93,12 @@ import Loader from "../components/Loader.astro";
 				<h2 class="text-3xl md:text-4xl font-bold text-white">
 					Mis <span style="color: var(--accent)">Proyectos</span>
 				</h2>
-				<div
-					class="w-24 h-1 mx-auto rounded-full"
-					style="background-color: var(--accent)"
-				>
-				</div>
+				<LineaAbajo />
 			</div>
 		</h2>
 		<Proyects />
 	</SectionContainer>
-	<SectionContainer id="habilidades" className="px-4 pb-10">
+	<SectionContainer id="habilidades" className="px-4 pb-10 reveal">
 		<h2
 			class="text-2xl font-semibold mb-6 text-white flex gap-x-2 items-center"
 		>
@@ -115,11 +107,7 @@ import Loader from "../components/Loader.astro";
 				<h2 class="text-3xl md:text-4xl font-bold text-white">
 					Mis <span style="color: var(--accent)">Habilidades</span>
 				</h2>
-				<div
-					class="w-24 h-1 mx-auto rounded-full"
-					style="background-color: var(--accent)"
-				>
-				</div>
+				<LineaAbajo />
 			</div>
 		</h2>
 		<Skills />
