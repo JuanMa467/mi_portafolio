@@ -34,7 +34,7 @@ const { data, title, description, link, image, images } = Astro.props;
         })}
     >
         <img
-            class="transition-all duration-300 w-full object-cover h-48"
+            class="transition-all duration-300 w-full object-contain h-48 bg-black/20"
             src={image}
             alt={title}
         />
