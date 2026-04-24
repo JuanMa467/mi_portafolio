@@ -114,14 +114,14 @@ const PROJECTS = [
 <!-- Modal / Carrousel -->
 <dialog
     id="project-modal"
-    class="fixed inset-0 m-auto bg-transparent backdrop:bg-black/95 border-none outline-none p-0 overflow-hidden rounded-3xl max-w-[95vw] w-full max-h-[90vh] reveal z-50"
+    class="fixed inset-0 m-auto bg-transparent backdrop:bg-black/95 border-none outline-none p-0 overflow-y-auto rounded-3xl max-w-[95vw] w-full max-h-[90vh] reveal z-50"
 >
     <div
-        class="relative w-full h-full flex flex-col md:flex-row bg-[#0a0a0a] border border-white/10 rounded-3xl overflow-hidden shadow-2xl"
+        class="relative w-full h-auto min-h-full flex flex-col md:flex-row bg-[#0a0a0a] border border-white/10 rounded-3xl overflow-hidden shadow-2xl"
     >
         <!-- Lado del Carrusel -->
         <div
-            class="relative w-full md:w-2/3 h-[50vh] md:h-auto bg-black overflow-hidden group/carousel"
+            class="relative w-full md:w-2/3 h-[35vh] md:h-auto bg-black overflow-hidden group/carousel"
         >
             <div
                 id="carousel-track"
@@ -133,7 +133,7 @@ const PROJECTS = [
             <!-- Botones de navegación -->
             <button
                 id="prev-btn"
-                class="absolute left-4 top-1/2 -translate-y-1/2 bg-white/5 hover:bg-white/10 text-white p-3 rounded-full backdrop-blur-md border border-white/10 opacity-0 group-hover/carousel:opacity-100 transition-opacity z-30"
+                class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/70 hover:bg-black/90 text-white p-3 rounded-full border border-gray-600 shadow-lg transition-all z-30"
             >
                 <svg
                     class="size-6"
@@ -143,13 +143,13 @@ const PROJECTS = [
                     ><path
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        stroke-width="2"
+                        stroke-width="2.5"
                         d="M15 19l-7-7 7-7"></path></svg
                 >
             </button>
             <button
                 id="next-btn"
-                class="absolute right-4 top-1/2 -translate-y-1/2 bg-white/5 hover:bg-white/10 text-white p-3 rounded-full backdrop-blur-md border border-white/10 opacity-0 group-hover/carousel:opacity-100 transition-opacity z-30"
+                class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/70 hover:bg-black/90 text-white p-3 rounded-full border border-gray-600 shadow-lg transition-all z-30"
             >
                 <svg
                     class="size-6"
@@ -159,7 +159,7 @@ const PROJECTS = [
                     ><path
                         stroke-linecap="round"
                         stroke-linejoin="round"
-                        stroke-width="2"
+                        stroke-width="2.5"
                         d="M9 5l7 7-7 7"></path></svg
                 >
             </button>
@@ -178,7 +178,7 @@ const PROJECTS = [
             class="w-full md:w-1/3 p-6 md:p-10 flex flex-col justify-between bg-[#0f0f0f] border-t md:border-t-0 md:border-l border-white/5"
         >
             <div>
-                <h3 id="modal-title" class="text-3xl font-bold text-white mb-4">
+                <h3 id="modal-title" class="text-2xl md:text-3xl font-bold text-white mb-4">
                 </h3>
                 <p
                     id="modal-desc"
@@ -198,7 +198,7 @@ const PROJECTS = [
         <!-- Botón de Cerrar -->
         <button
             id="close-modal"
-            class="absolute top-4 right-4 bg-white/5 hover:bg-white/10 backdrop-blur-md text-white rounded-full p-2 transition-all border border-white/10 z-50"
+            class="absolute top-4 right-4 bg-black/70 hover:bg-black/90 text-white rounded-full p-2 transition-all border border-gray-600 shadow-lg z-50"
             aria-label="Cerrar"
         >
             <svg
@@ -210,7 +210,7 @@ const PROJECTS = [
                 <path
                     stroke-linecap="round"
                     stroke-linejoin="round"
-                    stroke-width="2"
+                    stroke-width="2.5"
                     d="M6 18L18 6M6 6l12 12"></path>
             </svg>
         </button>
@@ -249,11 +249,21 @@ const PROJECTS = [
         const dots = dotsContainer?.querySelectorAll("div");
         dots?.forEach((dot, idx) => {
             if (idx === currentIndex) {
-                dot.classList.add("bg-white", "w-6");
-                dot.classList.remove("bg-white/30", "w-2");
+                dot.classList.add(
+                    "bg-gray-800",
+                    "w-6",
+                    "border",
+                    "border-gray-500",
+                );
+                dot.classList.remove("bg-gray-500", "w-2");
             } else {
-                dot.classList.remove("bg-white", "w-6");
-                dot.classList.add("bg-white/30", "w-2");
+                dot.classList.remove(
+                    "bg-gray-800",
+                    "w-6",
+                    "border",
+                    "border-gray-500",
+                );
+                dot.classList.add("bg-gray-500", "w-2");
             }
         });
     }
@@ -276,7 +286,7 @@ const PROJECTS = [
                         .map(
                             (img) => `
                     <div class="min-w-full h-full flex items-center justify-center">
-                        <img src="${img}" class="w-full h-full object-cover" />
+                        <img src="${img}" class="w-full h-full object-contain" />
                     </div>
                 `,
                         )
@@ -288,7 +298,7 @@ const PROJECTS = [
                     dotsContainer.innerHTML = currentProject.images
                         .map(
                             (_, i) => `
-                    <div class="h-2 rounded-full transition-all duration-300 ${i === 0 ? "bg-white w-6" : "bg-white/30 w-2"}"></div>
+                    <div class="h-2 rounded-full transition-all duration-300 ${i === 0 ? "bg-gray-800 w-6 border border-gray-500" : "bg-gray-500 w-2"}"></div>
                 `,
                         )
                         .join("");
